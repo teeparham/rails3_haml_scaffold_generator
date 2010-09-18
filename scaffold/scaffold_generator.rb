@@ -35,6 +35,10 @@ module Haml
       def copy_form_file
         copy_view :_form
       end
+      
+      def copy_error_file
+        template "_error_messages.html.haml", File.join("app/views/shared", controller_class_path, "_error_messages.html.haml")
+      end
 
       def copy_layout_file
         return unless options[:layout]
