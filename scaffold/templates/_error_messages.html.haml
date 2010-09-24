@@ -1,11 +1,6 @@
 - if target.errors.any?
-  #errorExplanation
-    - model_name = target.class.model_name.human.downcase
-    - if target.errors.count == 1
-      %h2= t 'errors.template.header.one', :model => model_name
-    - else
-      %h2= t 'errors.template.header.other', :model => model_name, :count => target.errors.count
-    %p= t 'errors.template.body'
+  .formError
     %ul
       - target.errors.full_messages.each do |msg|
         %li= msg
+        
